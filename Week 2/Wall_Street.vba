@@ -1,24 +1,30 @@
 Sub GetVolume()
-    ' define variables
-    Dim vol_range As Range
-    Dim ticker_range As Range
-    Dim volume(1 To 288) As Variant
 
-    ' set variables
-    Set vol_range = Range("G2:G70926")
-    Set ticker_range = Range("I2:I290")
+    Dim total As Double
+    Dim currentrow As Long
+    Dim tickerrow As Long
 
-    ' fill array for total ticker volumes
-    For i = 2 To ticker_range.Rows.Count - 2
-        For j = 2 To vol_range.Rows.Count - 2
-            If Cells(i, 9).Value = Cells(j, 1).Value Then
-                volume(i) = volume(i) + Cells(j, 7).Value
-            End If
-        Next j
+    currentrow = 2
+    total = 0
+    tickerrow = 2
+
+    For i = 0 To 70926
+        ' add to total
+        total = total + Cells(currentrow, 7).Value
+
+        ' if the ticker changes
+        If Cells(currentrow, 1).Value <> Cells(currentrow + 1, 1).Value Then
+            ' fill in the ticker name
+            Cells(tickerrow, 9).Value = Cells(currentrow, 1).Value
+            ' fill in the ticker total
+            Cells(tickerrow, 10).Value = total
+            ' increment the tickerrow
+            tickerrow = tickerrow + 1
+            ' reset the total
+            total = 0
+        End If
+        ' increment the row
+        currentrow = currentrow + 1
     Next i
 
-    ' print volume totals
-    For i = 2 To ticker_range.Rows.Count - 2
-        Cells(i, 10).Value = volume(i)
-    Next i
 End Sub
