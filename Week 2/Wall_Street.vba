@@ -21,5 +21,4 @@ Sub GetVolume()
     For i = 2 To ticker_range.Rows.Count - 2
         Cells(i, 10).Value = volume(i)
     Next i
-
 End Sub
