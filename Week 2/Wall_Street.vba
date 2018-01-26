@@ -13,6 +13,7 @@ Sub GetVolume()
     Dim MaxPercentTicker As String
     Dim MinPercentTicker As String
     Dim MaxTicker As String
+    Dim TickerLastRow As Double
 
     For Each ws In Worksheets
         LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
@@ -64,8 +65,8 @@ Sub GetVolume()
             ' increment the row
             currentrow = currentrow + 1
         Next i
-
-        For j = 2 To LastRow
+        TickerLastRow = ws.Cells(Rows.Count, 9).End(xlUp).Row
+        For j = 2 To TickerLastRow
             If ws.Cells(j, 11).Value > PercentMax Then
                 PercentMax = ws.Cells(j, 11).Value
                 MaxPercentTicker = ws.Cells(j, 9).Value
