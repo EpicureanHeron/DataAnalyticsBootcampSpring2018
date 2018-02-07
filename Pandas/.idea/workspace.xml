@@ -11,11 +11,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchase_data.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/purchase_data.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="673">
+              <caret line="6241" column="1" lean-forward="false" selection-start-line="6241" selection-start-column="1" selection-end-line="6241" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="purchase_data2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/purchase_data2.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="673">
+              <caret line="625" column="1" lean-forward="false" selection-start-line="625" selection-start-column="1" selection-end-line="625" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -34,6 +54,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Heroes of Pymoli/main.py" />
+        <option value="$PROJECT_DIR$/Heroes of Pymoli/purchase_data2.json" />
+        <option value="$PROJECT_DIR$/Heroes of Pymoli/purchase_data.json" />
       </list>
     </option>
   </component>
@@ -62,6 +84,11 @@
             <path>
               <item name="Pandas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pandas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pandas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="Heroes of Pymoli" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -132,6 +159,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/purchase_data2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="625" column="1" lean-forward="false" selection-start-line="625" selection-start-column="1" selection-end-line="625" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/purchase_data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="6241" column="1" lean-forward="false" selection-start-line="6241" selection-start-column="1" selection-end-line="6241" selection-end-column="1" />
           <folding />
         </state>
       </provider>
