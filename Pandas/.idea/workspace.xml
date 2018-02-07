@@ -21,11 +21,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purchase_data.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="purchase_data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Heroes of Pymoli/purchase_data.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="673">
               <caret line="6241" column="1" lean-forward="false" selection-start-line="6241" selection-start-column="1" selection-end-line="6241" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schools_complete.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Academy of Py/schools_complete.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="students_complete.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Academy of Py/students_complete.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="695">
+              <caret line="39170" column="53" lean-forward="false" selection-start-line="39170" selection-start-column="53" selection-end-line="39170" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -56,6 +76,8 @@
         <option value="$PROJECT_DIR$/Heroes of Pymoli/main.py" />
         <option value="$PROJECT_DIR$/Heroes of Pymoli/purchase_data2.json" />
         <option value="$PROJECT_DIR$/Heroes of Pymoli/purchase_data.json" />
+        <option value="$PROJECT_DIR$/Academy of Py/schools_complete.csv" />
+        <option value="$PROJECT_DIR$/Academy of Py/students_complete.csv" />
       </list>
     </option>
   </component>
@@ -84,6 +106,11 @@
             <path>
               <item name="Pandas" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pandas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pandas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pandas" type="462c0819:PsiDirectoryNode" />
+              <item name="Academy of Py" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pandas" type="b2602c69:ProjectViewProjectNode" />
@@ -175,6 +202,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="673">
           <caret line="6241" column="1" lean-forward="false" selection-start-line="6241" selection-start-column="1" selection-end-line="6241" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Academy of Py/schools_complete.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Academy of Py/students_complete.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="39170" column="53" lean-forward="false" selection-start-line="39170" selection-start-column="53" selection-end-line="39170" selection-end-column="53" />
           <folding />
         </state>
       </provider>
