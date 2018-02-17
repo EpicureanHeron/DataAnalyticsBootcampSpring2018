@@ -40,6 +40,10 @@ del city_group_df['fare']
 del city_group_df['ride_id']
 del city_group_df['Type']
 
+
+
+city_df[city_df.index.duplicated()]
+
 city_group_df['Driver Count'] = city_df['driver_count']
 
 
