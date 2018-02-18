@@ -1,6 +1,6 @@
 # dependencies
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import os
 
 # grab file paths
@@ -38,14 +38,30 @@ city_group_df = city_group_df.rename(columns={'date' : 'Total Number of Rides'})
 # delete unneeded columns
 del city_group_df['fare']
 del city_group_df['ride_id']
-del city_group_df['Type']
 
+# remove duplicate city and keep the first occurance
+city_df = city_df.drop_duplicates(subset='city',keep='first')
 
+# set index to city
+city_df.set_index('city', inplace=True)
 
-city_df[city_df.index.duplicated()]
-
+# add driver count row to grouped df
 city_group_df['Driver Count'] = city_df['driver_count']
 
+# initialize lists
+x_axis = []
+y_axis = []
+driver_count = []
 
-# x_axis =
-# y_axis
+
+# fill lists with data
+for index, row in city_group_df.iterrows():
+    x_axis.append(row['Total Number of Rides'])
+    y_axis.append(row['Average Fare'])
+    driver_count.append(row['Driver Count'])
+
+# make bubble chart
+plt.scatter(x_axis, y_axis, s=driver_count)
+plt.xlabel("Total Number of Rides (Per City)")
+plt.ylabel("Average Fare ($)")
+plt.show()
