@@ -39,6 +39,9 @@ city_group_df = city_group_df.rename(columns={'date' : 'Total Number of Rides'})
 del city_group_df['fare']
 del city_group_df['ride_id']
 
+# change type from numbers to acutal type
+city_group_df['Type'] = city_df['type']
+
 # remove duplicate city and keep the first occurance
 city_df = city_df.drop_duplicates(subset='city',keep='first')
 
@@ -49,19 +52,38 @@ city_df.set_index('city', inplace=True)
 city_group_df['Driver Count'] = city_df['driver_count']
 
 # initialize lists
-x_axis = []
-y_axis = []
-driver_count = []
+urban_x = []
+urban_y = []
+urban_drivers = []
+suburban_x = []
+suburban_y = []
+suburban_drivers = []
+rural_x = []
+rural_y = []
+rural_drivers = []
 
 
 # fill lists with data
 for index, row in city_group_df.iterrows():
-    x_axis.append(row['Total Number of Rides'])
-    y_axis.append(row['Average Fare'])
-    driver_count.append(row['Driver Count'])
+    if row['Type'] == 'Suburban':
+        suburban_x.append(row['Total Number of Rides'])
+        suburban_y.append(row['Average Fare'])
+        suburban_drivers.append(row['Driver Count'])
+    elif row['Type'] == 'Urban':
+        urban_x.append(row['Total Number of Rides'])
+        urban_y.append(row['Average Fare'])
+        urban_drivers.append(row['Driver Count'])
+    elif row['Type'] == 'Rural':
+        rural_x.append(row['Total Number of Rides'])
+        rural_y.append(row['Average Fare'])
+        rural_drivers.append(row['Driver Count'])
 
 # make bubble chart
-plt.scatter(x_axis, y_axis, s=driver_count)
+plt.scatter(suburban_x, suburban_y, s=suburban_drivers, label='Suburban', color='#FFD700', edgecolor='black')
+plt.scatter(urban_x, urban_y, s=urban_drivers, label='Urban', color='#87CEFA', edgecolor='black')
+plt.scatter(rural_x, rural_y, s=rural_drivers, label='Rural', color='#FF7F50')
+plt.title('Pyber Ride Sharing Data (2016)')
 plt.xlabel("Total Number of Rides (Per City)")
 plt.ylabel("Average Fare ($)")
+plt.legend(title='City Type', loc='Best')
 plt.show()
