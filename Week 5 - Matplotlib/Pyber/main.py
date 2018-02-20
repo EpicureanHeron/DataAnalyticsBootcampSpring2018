@@ -15,9 +15,6 @@ ride_data = pd.read_csv(ride_data_path)
 city_df = pd.DataFrame(city_data)
 ride_df = pd.DataFrame(ride_data)
 
-# add city type to ride dataframe
-ride_df['Type'] = city_df['type']
-
 # get total number of rides per city
 city_group_df = ride_df.groupby('city').count()
 # get average fare per city
@@ -39,9 +36,6 @@ city_group_df = city_group_df.rename(columns={'date' : 'Total Number of Rides'})
 del city_group_df['fare']
 del city_group_df['ride_id']
 
-# change type from numbers to acutal type
-city_group_df['Type'] = city_df['type']
-
 # remove duplicate city and keep the first occurance
 city_df = city_df.drop_duplicates(subset='city',keep='first')
 
@@ -50,6 +44,9 @@ city_df.set_index('city', inplace=True)
 
 # add driver count row to grouped df
 city_group_df['Driver Count'] = city_df['driver_count']
+
+# add city type to grouped df
+city_group_df['Type'] = city_df['type']
 
 # initialize lists
 urban_x = []
