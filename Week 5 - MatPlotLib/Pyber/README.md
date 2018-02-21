@@ -13,7 +13,6 @@
 I would be interested to see if the demand is being met in each city, particularly rural cities. Given that rural areas have less drivers as urban areas, there may be a shortage of drivers in these areas and could give a boost in fares if more drivers sign up for these areas.
 
 
-
 ```python
 # dependencies
 import pandas as pd
@@ -108,17 +107,17 @@ city_group_df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -238,17 +237,17 @@ city_type_group.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -329,6 +328,7 @@ for index, row in city_type_group.iterrows():
 ```python
 # create pie chart based on fares
 plt.pie(fare_pieces, labels=labels, autopct='%1.1f%%', shadow=True, colors=colors, explode=(0.1,0,0))
+plt.title("% of Fares by City Type")
 plt.show()
 ```
 
@@ -340,6 +340,7 @@ plt.show()
 ```python
 # create pie chart based on rides
 plt.pie(ride_pieces, labels=labels, autopct='%1.1f%%', shadow=True, colors=colors, explode=(0.4,0,0))
+plt.title("% of Rides by City Type")
 plt.show()
 ```
 
@@ -351,8 +352,15 @@ plt.show()
 ```python
 # create pie chart based on drivers
 plt.pie(driver_pieces, labels=labels, autopct='%1.1f%%', shadow=True, colors=colors, explode=(0.4,0,0))
+plt.title("% of Drivers by City Type")
 plt.show()
 ```
 
 
 ![png](output_25_0.png)
+
+
+
+```python
+
+```
