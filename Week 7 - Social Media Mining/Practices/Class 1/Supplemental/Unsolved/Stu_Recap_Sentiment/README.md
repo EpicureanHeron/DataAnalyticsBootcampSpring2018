@@ -1,3 +1,0 @@
-### Billy Shakespeare
-
-### Instructions

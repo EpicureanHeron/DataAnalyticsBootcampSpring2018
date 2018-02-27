@@ -1,1 +1,0 @@
-worker: python WeatherBot_Solved.py
