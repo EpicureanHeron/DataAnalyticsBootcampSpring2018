@@ -3,6 +3,7 @@
 
 venv/
 .idea/
+# TODO: need to update this to remove API keys for tweepy
 Week 7 - Social Media Mining/
 
 # User-specific stuff:
