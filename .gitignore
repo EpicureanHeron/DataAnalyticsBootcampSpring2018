@@ -3,7 +3,6 @@
 
 venv/
 .idea/
-# TODO: need to update this to remove API keys for tweepy
 config.py*
 
 # User-specific stuff:
