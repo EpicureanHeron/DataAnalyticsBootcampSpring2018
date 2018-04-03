@@ -1,0 +1,34 @@
+header {
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: red;
+}
+
+h3 {
+  color: green;
+}
+
+img {
+  box-shadow: 5px 5px #888888;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  background-color: #e6ffff;
+}
+
+p {
+  font-size: 24px;
+}
+
+ul {
+  border: 1px;
+}
