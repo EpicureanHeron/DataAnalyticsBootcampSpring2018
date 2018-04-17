@@ -1,0 +1,3 @@
+> use Dumpster_DB
+
+> db.divers.insertMany([{ "name" : "Dylan" ,"yearsDiving" : 3, "stillDiving" : true, "bestFinds" : ["Titanic", "Pirate Ship", "Mermaids"]}, {"name" : "James Cameron" ,"yearsDiving" : 30, "stillDiving" : true, "bestFinds" : ["The Bar", "Petrified Wale Poop", "Dead Fish"]}, {"name" : "Marcia Clark" ,"yearsDiving" : 8, "stillDiving" : false, "bestFinds" : ["Batman's Cape", "Bruce Jenner's Penis", "OJ's Glove"]}])

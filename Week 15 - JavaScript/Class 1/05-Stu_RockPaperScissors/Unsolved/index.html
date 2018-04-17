@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock! Paper! Scissors!</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Randomly select the computers choice
+        var computerSelections = ["r", "p", "s"];
+        var computerChoice = computerSelections[Math.round(Math.random()*2)];
+        // console.log(computerChoice);
+
+        // YOUR CODE HERE
+        var userChoice = prompt("(R)ock, (P)aper, or (S)issors?: ");
+
+        console.log("The Computer chose: " + computerChoice);
+        console.log("You chose: " + userChoice);
+
+        if(userChoice.toLowerCase() == "r" && computerChoice.toLowerCase() == "s")
+        {
+          console.log("Rock smashes scissors, you win!");
+        }
+        else if(userChoice.toLowerCase() == "s" && computerChoice.toLowerCase() == "p")
+        {
+          console.log("Scissors cuts paper, you win!");
+        }
+        else if(userChoice.toLowerCase() == "p" && computerChoice.toLowerCase() == "r")
+        {
+          console.log("Paper covers rock, you win!");
+        }
+        else if(userChoice.toLowerCase() == computerChoice.toLowerCase())
+        {
+          console.log("It's a Tie!");
+        }
+        else if (userChoice != 'r' || userChoice != 's' || userChoice != 'p')
+        {
+            console.log("User did not input valid choice");    
+        }
+        else
+        {
+          console.log("You Lose!")
+        }
+    </script>
+</body>
+</html>

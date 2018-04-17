@@ -1,0 +1,20 @@
+•	File:
+  ◦	index.html
+
+•	Instructions
+  ◦	Create a web page that will prompt users for a choice of r for rock, p for paper, or s for scissors. 
+  ◦	Alert the user of the computer's selection and of their own selection. 
+  ◦	Create enough conditionals to determine if the user won, lost, or tied to the computer. 
+
+•	Bonus:
+  ◦	Store the code for the web application within an external JavaScript file and then create a reference to it within the HTML file.
+
+•	Hint:
+  ◦	Check out the Math.random() documentation for more info on how to create a random number.
+
+•	Instructions:
+  ◦	Constructing conditional statements in JavaScript is not all that different from creating small coding mazes. Variables must navigate their way through a series of twists and turns as they attempt to make their way to a desired output. 
+  ◦	In this activity, you will be tasked with creating a small maze of conditionals for a variable to navigate its way through. After constructing your maze, share it with your fellow students over slack before attempting to solve the miniature mazes they have created as well. 
+
+•	Hint:
+  ◦	For an example as to how these kinds of mazes should look, open up the sample file provided within your IDE and browser. While this puzzle is quite simple to solve it should give you an idea on what to create.

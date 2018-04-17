@@ -1,0 +1,26 @@
+
+
+# A. Use the command line to create a classDB database.
+# Insert entries for yourself and the people in your row in a classroom collection.
+# Each document should have:
+
+# 1. A field of name with the person's name.
+# 2. A field of rownumber which will contain the row number that they are in.
+# 3. A field of the person's favorite Python library, e.g. pandas.
+# 4. A field of a list of the person's hobbies .
+
+# Example:
+
+
+
+
+
+# B. Use find commands to get:
+# 1. A list of everyone in a particular row.
+
+# 2. An entry for a single person.
+
+
+# Bonus:
+# If you finish early, check out the MongoDB documentation
+# and figure out how to find users by an entry in an array.

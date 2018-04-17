@@ -1,0 +1,39 @@
+> use classDB
+
+> db.classroom.insert({"name" : "Dylan", "row" : 3, "Favorite Python Lib" : "sklearn", "hobbies" : ["Gaming", "Coding", "Working Out", "Playing with Dogs"]})
+WriteResult({ "nInserted" : 1 })
+
+> db.classroom.insert({"name" : "Joe", "row" : 3, "Favorite Python Lib" : "matplotlib", "hobbies" : ["Driving", "Fishing", "PUBG"]})
+WriteResult({ "nInserted" : 1 })
+
+> db.classroom.insert({"name" : "Jim", "row" : 1, "Favorite Python Lib" : "pandas", "hobbies" : ["Sleeping", "Hockey", "Cornhole"]})
+WriteResult({ "nInserted" : 1 })
+
+> db.classroom.find({"row": 3}).pretty()
+{
+	"_id" : ObjectId("5acc0836cba3d9d1b2355f65"),
+	"name" : "Dylan",
+	"row" : 3,
+	"Favorite Python Lib" : "sklearn",
+	"hobbies" : [
+		"Gaming",
+		"Coding",
+		"Working Out",
+		"Playing with Dogs"
+	]
+}
+{
+	"_id" : ObjectId("5acc087dcba3d9d1b2355f66"),
+	"name" : "Joe",
+	"row" : 3,
+	"Favorite Python Lib" : "matplotlib",
+	"hobbies" : [
+		"Driving",
+		"Fishing",
+		"PUBG"
+	]
+}
+
+> db.classroom.find({"_id" : ObjectId("5acc0836cba3d9d1b2355f65")}).pretty()
+
+> db.classroom.find( { hobbies: { $in: ["Fishing" ] } } )

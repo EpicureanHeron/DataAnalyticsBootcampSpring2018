@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+  var height = 66;
+  var age = 16;
+  var adult_permission = true;
+
+  if ((height > 70) && (age >=18)){
+    console.log("Can ride all the roller coasters");
+  }
+  else if ((height > 65) && (age >=18)){
+    console.log("Can ride moderate roller coasters");
+  }
+  else if ((height > 60) && (age >= 18)){
+    console.log("Can ride light roller coasters");
+  }
+  else if (((height > 50) && (age >= 18)) || ((adult_permission) && (height > 50))){
+    console.log("Can ride bumper cars");
+  }
+  else{
+    console.log("Sitck to lazy river");
+  }
+
+  // The output will be "Can ride bumper cars"
+
+  </script>
+</body>
+</html>
