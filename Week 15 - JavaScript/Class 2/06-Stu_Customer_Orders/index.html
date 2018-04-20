@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="text-center">Order Information</h1>
+        <form>
+          <div class="form-group m-top-75">
+            <label for="name">Customer Name:</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="item">Item:</label>
+            <input type="text" class="form-control" id="item">
+          </div>
+          <div class="form-group">
+              <label for="perishable">Perishable:</label>
+              <input type="text" class="form-control" id="perishable">
+            </div>          
+          <button id="submit" class="btn btn-success right">Submit</button>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center">Existing Orders</h1>
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center">Priority Orders</h3>
+          <ul id="priority" class="list-group">
+          </ul>
+        </div>     
+
+        <div class="col-md-6">
+            <h3 class="text-center">Regular Orders</h3>
+            <ul id="non-priority" class="list-group">
+            </ul>
+          </div>         
+      </div>
+
+  </div>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>

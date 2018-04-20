@@ -1,13 +1,13 @@
+# import dependicies
+from bs4 import BeautifulSoup as bs
+import requests
+from splinter import Browser
+import time
+import pandas as pd
+import numpy as np
+
 # TODO: see if I can only call browser once
 def scrape():
-    # import dependicies
-    from bs4 import BeautifulSoup as bs
-    import requests
-    from splinter import Browser
-    import time
-    import pandas as pd
-    import numpy as np
-
     # get url
     url = 'https://mars.nasa.gov/news/'
 
@@ -74,6 +74,10 @@ def scrape():
 
     mars_facts.set_index('Category', inplace=True)
 
+    mars_facts = mars_facts.to_dict()
+
+    mars_facts = mars_facts['Value']
+
     # obtain high resolution image urls for each of Mar's hemispheres
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     response = requests.get(url)
@@ -114,3 +118,15 @@ def scrape():
     for i in np.arange(len(image_titles)):
         hemisphere_image_urls.append({"Title" : clean_titles[i],
                                      "img_url" : image_urls[i]})
+
+    # TODO: return dictionary of values
+    scrape_dict = {
+        "latest_title" : latest_title,
+        "latest_paragraph" : latest_paragraph,
+        "featured_image_url" : featured_image_url,
+        "mars_weather" : mars_weather,
+        "mars_facts" : mars_facts,
+        "hemisphere_image_urls" : hemisphere_image_urls
+    }
+
+    return scrape_dict
