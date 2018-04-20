@@ -48,6 +48,13 @@
       {% endfor %}
     </table>
   </div>
+
+  <div id="mars-hemispheres">
+    {% for item in mars_dict.hemisphere_image_urls %}
+      <img src="{{item.img_url}}" alt="{{item.title}}">
+        <p>{{item.Title}}</p>
+      {% endfor %}
+  </div>
 </body>
 
 </html>
