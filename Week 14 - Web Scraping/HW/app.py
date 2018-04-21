@@ -1,5 +1,5 @@
 # import dependencies
-from flask import Flask, render_template, jsonify, redirect
+from flask import Flask, render_template, jsonify, redirect, current_app
 from flask_pymongo import PyMongo
 import scrape_mars
 
@@ -12,7 +12,10 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mars_data = mongo.db.mars.find_one()
-    return render_template("index.html", mars_dict=mars_data)
+    if bool(mars_data):
+        return render_template("index.html", mars_dict=mars_data)
+    else:
+        return current_app.send_static_file('index.html')
 
 # create scrape route
 @app.route("/scrape")

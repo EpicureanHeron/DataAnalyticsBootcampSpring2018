@@ -25,36 +25,62 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
   </div>
-  <h2>Latest Mars News</h2>
-  <h3>{{mars_dict.latest_title}}</h3>
-  <p>{{mars_dict.latest_paragraph}}</p>
 
-  <div id="mars-featured-image">
-    <h2>Featured Mars Image</h2>
-    <img src="{{mars_dict.featured_image_url}}" alt="Featured Mars Image"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Latest Mars News</h2>
+        <h3>{{mars_dict.latest_title}}</h3>
+        <p>{{mars_dict.latest_paragraph}}</p>
+      </div>
+    </div>
 
-  <div id="mars-weather">
-    <h3>Mars Weather</h3>
-    <p>{{mars_dict.mars_weather}}</p>
+    <div class="row">
+      <div class="col-lg-8">
+        <div id="mars-featured-image">
+          <h2>Featured Mars Image</h2>
+          <img class="img-responsive"src="{{mars_dict.featured_image_url}}" alt="Featured Mars Image">
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div id="mars-weather">
+          <h3>Mars Weather</h3>
+          <p>{{mars_dict.mars_weather}}</p>
+        </div>
+        <div id="mars-facts">
+          <h3>Mars Facts</h3>
+          <table class="table">
+            {% for key, value in mars_dict.mars_facts.items() %}
+            <tr>
+              <td> {{key}} </td>
+              <td> {{value}} </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div id="mars-facts">
-    <h3>Mars Facts</h3>
-    <table class="table">
-      {% for key, value in mars_dict.mars_facts.items() %}
-      <tr>
-        <td> {{key}} </td>
-        <td> {{value}} </td>
-      </tr>
+
+
+
+  <div class="row">
+    <div id="mars-hemispheres">
+      <h2 class="text-center">Mars' Hemispheres</h2>
+      {% for item in mars_dict.hemisphere_image_urls %}
+      <div class="col-lg-6">
+        <div class="thumbnail">
+          <img src="{{item.img_url}}" alt="{{item.title}}">
+          <div class="caption">
+            <p>{{item.Title}}</p>
+          </div>
+        </div>
+      </div>
       {% endfor %}
-    </table>
+    </div>
   </div>
 
-  <div id="mars-hemispheres">
-    {% for item in mars_dict.hemisphere_image_urls %}
-      <img src="{{item.img_url}}" alt="{{item.title}}">
-        <p>{{item.Title}}</p>
-      {% endfor %}
-  </div>
 </body>
 
 </html>
