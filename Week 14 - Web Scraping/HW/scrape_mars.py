@@ -37,7 +37,7 @@ def scrape():
 
     # use splinter to grab image urls
     executable_path = {'executable_path': 'chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url)
     browser.click_link_by_partial_text('FULL IMAGE')
@@ -51,7 +51,7 @@ def scrape():
     featured_image_url = 'https://www.jpl.nasa.gov' + featured_image_url[0]['src']
 
     executable_path = {'executable_path': 'chromedriver'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
     url = 'https://twitter.com/marswxreport?lang=en'
     browser.visit(url)
 
