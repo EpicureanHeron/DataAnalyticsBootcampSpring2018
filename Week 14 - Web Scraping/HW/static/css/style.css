@@ -3,3 +3,10 @@
   align-items: center;
   text-align: center;
 }
+
+#mars-weather {
+    border-radius: 25px;
+    border: 2px solid;
+    padding: 20px;
+    max-width: 100%;
+}
