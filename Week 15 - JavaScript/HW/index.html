@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Aliens R Real</title>
-  </head>
-  <body>
-    <input type="text" name="datetime_search" id="datetime_search" placeholder="Date/Time">
-    <input type="text" name="city_search" id="city_search" placeholder="City">
-    <input type="text" name="state_search" id="state_search" placeholder="State">
-    <input type="text" name="country_search" id="country_search" placeholder="Country">
-    <input type="text" name="shape_search" id="shape_search" placeholder="Shape">
 
-    <button type="button" name="search" id="search">Search</button>
-    <button type="button" name="reset" id="reset">Reset</button>
-    <table>
-      <thead>
-        <tr>
-          <th>Date/Time</th>
-          <th>City</th>
-          <th>State</th>
-          <th>Country</th>
-          <th>Shape</th>
-          <th>Duration</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
+<head>
+  <meta charset="utf-8">
+  <title>Aliens R Real</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-      </tbody>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="input-group input-group-sm">
+    <input type="text" name="datetime_search" id="datetime_search" placeholder="Date/Time" class="form-control">
+    <input type="text" name="city_search" id="city_search" placeholder="City" class="form-control">
+    <input type="text" name="state_search" id="state_search" placeholder="State" class="form-control">
+    <input type="text" name="country_search" id="country_search" placeholder="Country" class="form-control">
+    <input type="text" name="shape_search" id="shape_search" placeholder="Shape" class="form-control">
+  </div>
+
+  <div class="btn-group">
+    <button type="button" name="search" id="search" class="btn btn-default">Search</button>
+    <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date/Time</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Shape</th>
+        <th>Duration</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
 
 
-    </table>
-    <script type="text/javascript" src="data.js"></script>
-    <script type="text/javascript" src="table.js"></script>
-  </body>
+  </table>
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="table.js"></script>
+</body>
+
 </html>
