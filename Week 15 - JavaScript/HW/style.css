@@ -6,3 +6,19 @@ body {
 input {
   opacity: 0.65;
 }
+
+h1 {
+  font-family: 'Do Hyeon', sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+#search-group{
+  width:800px;
+  margin:0 auto;
+}
+
+#search-group button{
+  width:381px;
+  margin:0 auto;
+}

@@ -12,24 +12,28 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="input-group input-group-sm">
-    <input type="text" name="datetime_search" id="datetime_search" placeholder="Date/Time" class="form-control">
-    <input type="text" name="city_search" id="city_search" placeholder="City" class="form-control">
-    <input type="text" name="state_search" id="state_search" placeholder="State" class="form-control">
-    <input type="text" name="country_search" id="country_search" placeholder="Country" class="form-control">
-    <input type="text" name="shape_search" id="shape_search" placeholder="Shape" class="form-control">
+  <h1>I Want to Believe</h1>
+  <div id="search-group">
+    <div class="input-group input-group-sm">
+      <input type="text" name="datetime_search" id="datetime_search" placeholder="Date/Time" class="form-control">
+      <input type="text" name="city_search" id="city_search" placeholder="City" class="form-control">
+      <input type="text" name="state_search" id="state_search" placeholder="State" class="form-control">
+      <input type="text" name="country_search" id="country_search" placeholder="Country" class="form-control">
+      <input type="text" name="shape_search" id="shape_search" placeholder="Shape" class="form-control">
+    </div>
+
+    <div class="btn-group">
+      <button type="button" name="search" id="search" class="btn btn-default">Search</button>
+      <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
+    </div>
   </div>
 
-  <div class="btn-group">
-    <button type="button" name="search" id="search" class="btn btn-default">Search</button>
-    <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
-  </div>
-  <table class="table">
+  <table class="table table-condensed">
     <thead>
       <tr>
         <th>Date/Time</th>
