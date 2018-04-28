@@ -84,7 +84,7 @@ function resetTable() {
   $countryInput.value = "";
   $shapeInput.value = "";
   renderTable();
-  // TODO: set input values to ""
 }
 
+resetTable()
 renderTable();
