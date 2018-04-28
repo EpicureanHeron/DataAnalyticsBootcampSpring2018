@@ -1,30 +1,24 @@
-// Get references to the tbody element, input field and button
 var $tbody = document.querySelector("tbody");
 var $dateTimeInput = document.querySelector("#datetime_search");
+var $cityInput = document.querySelector("#city_search");
+var $stateInput = document.querySelector("#state_search");
+var $countryInput = document.querySelector("#country_search");
+var $shapeInput = document.querySelector("#shape_search");
 var $searchBtn = document.querySelector("#search");
 var $resetBtn = document.querySelector("#reset");
 
-// Add an event listener to the searchButton, call handleSearchButtonClick when clicked
 $searchBtn.addEventListener("click", handleSearchButtonClick);
 $resetBtn.addEventListener("click", resetTable);
 
-// Set filteredentryes to entryData initially
-function resetTable() {
-
-}
 var UFOData = dataSet;
 
-// renderTable renders the filteredentryes to the tbody
 function renderTable() {
   $tbody.innerHTML = "";
   for (var i = 0; i < UFOData.length; i++) {
-    // Get get the current entry object and its fields
     var entry = UFOData[i];
     var fields = Object.keys(entry);
-    // Create a new row in the tbody, set the index to be i + startingIndex
     var $row = $tbody.insertRow(i);
     for (var j = 0; j < fields.length; j++) {
-      // For every field in the entry object, create a new cell at set its inner text to be the current value at the current entry's field
       var field = fields[j];
       var $cell = $row.insertCell(j);
       $cell.innerText = entry[field];
@@ -33,18 +27,51 @@ function renderTable() {
 }
 
 function handleSearchButtonClick() {
-  // Format the user's search by removing leading and trailing whitespace, lowercase the string
-  console.log("in search handlers");
-  console.log($dateTimeInput.value.trim().toLowerCase());
   var filterDateTime = $dateTimeInput.value.trim().toLowerCase();
+  var filterCity = $cityInput.value.trim().toLowerCase();
+  var filterState = $stateInput.value.trim().toLowerCase();
+  var filterCountry = $countryInput.value.trim().toLowerCase();
+  var filterShape = $shapeInput.value.trim().toLowerCase();
 
-  // Set filteredentryes to an array of all entryes whose "state" matches the filter
-  UFOData = UFOData.filter(function(entry) {
-    var entryDateTime = entry.datetime.toLowerCase();
+  if (filterDateTime) {
+    UFOData = UFOData.filter(function(entry) {
+      var entryDateTime = entry.datetime.toLowerCase();
 
-    // If true, add the entry to the filteredentryes, otherwise don't add it to filteredentryes
-    return entryDateTime === filterDateTime;
-  });
+      return entryDateTime === filterDateTime;
+    });
+  }
+
+  if (filterCity) {
+    UFOData = UFOData.filter(function(entry) {
+      var entryCity = entry.city.toLowerCase();
+
+      return entryCity === filterCity;
+    });
+  }
+
+  if (filterState) {
+    UFOData = UFOData.filter(function(entry) {
+      var entryState = entry.state.toLowerCase();
+
+      return entryState === filterState;
+    });
+  }
+
+  if (filterCountry) {
+    UFOData = UFOData.filter(function(entry) {
+      var entryCountry = entry.country.toLowerCase();
+
+      return entryCountry === filterCountry;
+    });
+  }
+
+  if (filterShape) {
+    UFOData = UFOData.filter(function(entry) {
+      var entryShape = entry.shape.toLowerCase();
+
+      return entryShape === filterShape;
+    });
+  }
 
   renderTable();
 }
@@ -52,7 +79,7 @@ function handleSearchButtonClick() {
 function resetTable() {
   UFOData = dataSet;
   renderTable();
+  // TODO: set input values to ""
 }
 
-// Render the table for the first time on page load
 renderTable();
