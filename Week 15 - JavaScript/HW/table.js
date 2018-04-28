@@ -78,6 +78,11 @@ function handleSearchButtonClick() {
 
 function resetTable() {
   UFOData = dataSet;
+  $dateTimeInput.value = "";
+  $cityInput.value = "";
+  $stateInput.value = "";
+  $countryInput.value = "";
+  $shapeInput.value = "";
   renderTable();
   // TODO: set input values to ""
 }
