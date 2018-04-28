@@ -22,3 +22,11 @@ h1 {
   width:381px;
   margin:0 auto;
 }
+
+.table th,td{
+  text-align: center;
+}
+
+.table{
+  width: 75%;
+}
