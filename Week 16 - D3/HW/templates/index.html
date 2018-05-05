@@ -14,13 +14,15 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-  <h1>Belly Button</h1>
+  <div class="jumbotron">
+    <h1 align="center">Belly Button Exploration</h1>
+  </div>
+  <span style="align: center">
   <select id="selDataset" onchange="optionChanged(this.value)"></select>
-  <div id="pie"></div>
-  <div id="bubble"></div>
   <table class="table table-condensed">
     <thead>
       <tr>
@@ -36,6 +38,10 @@
 
     </tbody>
   </table>
+    <div id="bubble"></div>
+  <div id="pie"></div>
+
+
   <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}">
   </script>
 </body>
