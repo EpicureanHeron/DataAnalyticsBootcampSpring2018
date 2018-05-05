@@ -6,11 +6,27 @@ var $countryInput = document.querySelector("#country_search");
 var $shapeInput = document.querySelector("#shape_search");
 var $searchBtn = document.querySelector("#search");
 var $resetBtn = document.querySelector("#reset");
+var $pagnationList = document.querySelector("#pagination");
 
 $searchBtn.addEventListener("click", handleSearchButtonClick);
 $resetBtn.addEventListener("click", resetTable);
 
 var UFOData = dataSet;
+
+function createPagination() {
+  console.log("in pag function");
+  // get number of pages
+  numOfPages = UFOData.length / 1000;
+  console.log(numOfPages);
+
+  // for (var i = 1; i <= numOfPages; i++) {
+  //   var item = document.createElement("li");
+  //   item.innerText = i;
+  //   console.log(item);
+  //   $pagnationList.appendChild(i);
+  //
+  // }
+}
 
 function renderTable() {
   $tbody.innerHTML = "";
@@ -86,5 +102,6 @@ function resetTable() {
   renderTable();
 }
 
-resetTable()
+createPagination();
+resetTable();
 renderTable();
