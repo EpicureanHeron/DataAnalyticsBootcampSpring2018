@@ -47,7 +47,8 @@ def otu():
 
 @app.route('/metadata/<sample>')
 def metadata(sample):
-    results = session.query(META.AGE, META.BBTYPE, META.ETHNICITY, META.GENDER, META.LOCATION).filter(META.SAMPLEID == sample)
+    split = sample.split('_')
+    results = session.query(META.AGE, META.BBTYPE, META.ETHNICITY, META.GENDER, META.LOCATION).filter(META.SAMPLEID == split[1]).all()
     meta = results[0]
     formatted = {
         "AGE": meta[0],
@@ -55,17 +56,20 @@ def metadata(sample):
         "ETHNICITY": meta[2],
         "GENDER": meta[3],
         "LOCATION": meta[4],
-        "SAMPLEID": sample
+        "SAMPLEID": split[1]
     }
     return jsonify(formatted)
 
-# @app.route('/wfreq/<sample>')
-#     """Weekly Washing Frequency as a number.
-#
-#     Args: Sample in the format: `BB_940`
-#
-#     Returns an integer value for the weekly washing frequency `WFREQ`
-#     """
+@app.route('/wfreq/<sample>')
+def wfreq(sample):
+    split = sample.split('_')
+    sample = split[1]
+    results = session.query(META.WFREQ).filter(META.SAMPLEID == sample).all()
+    formatted = {
+        "Wash Frequency" : results[0][0]
+    }
+    return jsonify(formatted)
+
 #
 # @app.route('/samples/<sample>')
 #     """OTU IDs and Sample Values for a given sample.
