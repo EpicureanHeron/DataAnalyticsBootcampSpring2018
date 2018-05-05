@@ -6,6 +6,7 @@ from flask import Flask, render_template, jsonify, redirect, current_app
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
+from flask_sqlalchemy import SQLAlchemy
 
 engine = create_engine("sqlite:///db/belly_button_biodiversity.sqlite")
 
@@ -22,6 +23,8 @@ session = Session(engine)
 
 # create instance of Flask
 app = Flask(__name__)
+
+db = SQLAlchemy(app)
 
 # create index route
 @app.route("/")
@@ -70,33 +73,57 @@ def wfreq(sample):
     }
     return jsonify(formatted)
 
-#
-# @app.route('/samples/<sample>')
-#     """OTU IDs and Sample Values for a given sample.
-#
-#     Sort your Pandas DataFrame (OTU ID and Sample Value)
-#     in Descending Order by Sample Value
-#
-#     Return a list of dictionaries containing sorted lists  for `otu_ids`
-#     and `sample_values`
-#
-#     [
-#         {
-#             otu_ids: [
-#                 1166,
-#                 2858,
-#                 481,
-#                 ...
-#             ],
-#             sample_values: [
-#                 163,
-#                 126,
-#                 113,
-#                 ...
-#             ]
-#         }
-#     ]
-#     """
+
+@app.route('/samples/<sample>')
+def sample(sample):
+    results = session.execute("SELECT otu_id," + sample + " FROM samples ORDER BY " + sample + " DESC")
+
+    values = []
+    otu_ids = []
+    for result in results:
+        otu_ids.append(result[0])
+        values.append(result[1])
+
+    d = {
+        "otu_id" : otu_ids,
+        "value": values
+    }
+
+    df = pd.DataFrame(d)
+
+    formatted = {
+            "otu_id": df["otu_id"].values.tolist(),
+            "value": df["value"].values.tolist()
+    }
+
+    return jsonify(formatted)
+
+
+    """OTU IDs and Sample Values for a given sample.
+
+    Sort your Pandas DataFrame (OTU ID and Sample Value)
+    in Descending Order by Sample Value
+
+    Return a list of dictionaries containing sorted lists  for `otu_ids`
+    and `sample_values`
+
+    [
+        {
+            otu_ids: [
+                1166,
+                2858,
+                481,
+                ...
+            ],
+            sample_values: [
+                163,
+                126,
+                113,
+                ...
+            ]
+        }
+    ]
+    """
 
 
 if __name__ == "__main__":
