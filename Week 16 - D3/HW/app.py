@@ -36,38 +36,22 @@ def names():
     names = names[1:]
     return jsonify(names)
 
-# @app.route('/otu')
-#     """List of OTU descriptions.
-#
-#     Returns a list of OTU descriptions in the following format
-#
-#     [
-#         "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
-#         "Archaea;Euryarchaeota;Halobacteria;Halobacteriales;Halobacteriaceae;Halococcus",
-#         "Bacteria",
-#         "Bacteria",
-#         "Bacteria",
-#         ...
-#     ]
-#     """
-#
-# @app.route('/metadata/<sample>')
-#     """MetaData for a given sample.
-#
-#     Args: Sample in the format: `BB_940`
-#
-#     Returns a json dictionary of sample metadata in the format
-#
-#     {
-#         AGE: 24,
-#         BBTYPE: "I",
-#         ETHNICITY: "Caucasian",
-#         GENDER: "F",
-#         LOCATION: "Beaufort/NC",
-#         SAMPLEID: 940
-#     }
-#     """
-#
+@app.route('/otu')
+def otu():
+    results = session.query(OTU.lowest_taxonomic_unit_found).all()
+    descriptions = []
+    # remove tuples from list
+    for result in results:
+        descriptions.append(result[0])
+    return jsonify(descriptions)
+
+@app.route('/metadata/<sample>')
+def metadata(sample):
+    results = session.query(META.EVENT, META.ETHNICITY, META.GENDER, META.AGE, META.WFREQ, META.BBTYPE, META.LOCATION, META.COUNTRY012, META.ZIP012).filter(META.SAMPLEID == sample)
+    meta = results[0]
+
+    return jsonify(meta)
+
 # @app.route('/wfreq/<sample>')
 #     """Weekly Washing Frequency as a number.
 #
