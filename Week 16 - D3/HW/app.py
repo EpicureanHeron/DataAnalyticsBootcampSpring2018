@@ -91,10 +91,10 @@ def sample(sample):
 
     df = pd.DataFrame(d)
 
-    formatted = {
+    formatted = [{
             "otu_id": df["otu_id"].values.tolist(),
             "value": df["value"].values.tolist()
-    }
+    }]
 
     return jsonify(formatted)
 
