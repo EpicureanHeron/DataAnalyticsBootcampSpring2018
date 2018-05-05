@@ -47,10 +47,17 @@ def otu():
 
 @app.route('/metadata/<sample>')
 def metadata(sample):
-    results = session.query(META.EVENT, META.ETHNICITY, META.GENDER, META.AGE, META.WFREQ, META.BBTYPE, META.LOCATION, META.COUNTRY012, META.ZIP012).filter(META.SAMPLEID == sample)
+    results = session.query(META.AGE, META.BBTYPE, META.ETHNICITY, META.GENDER, META.LOCATION).filter(META.SAMPLEID == sample)
     meta = results[0]
-
-    return jsonify(meta)
+    formatted = {
+        "AGE": meta[0],
+        "BBTYPE": meta[1],
+        "ETHNICITY": meta[2],
+        "GENDER": meta[3],
+        "LOCATION": meta[4],
+        "SAMPLEID": sample
+    }
+    return jsonify(formatted)
 
 # @app.route('/wfreq/<sample>')
 #     """Weekly Washing Frequency as a number.
