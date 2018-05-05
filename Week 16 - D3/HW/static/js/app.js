@@ -63,16 +63,53 @@ Plotly.d3.json("/metadata/BB_940", function(error, response) {
       var field = fields[j];
       var $cell = $row.insertCell(j);
       $cell.innerText = entry[field];
+      $cell.id = field;
     }
-}
-
-  // $meta = document.getElementById('meta')
+  }
 
 });
 
+function updatePie(newData) {
+  var PIE = document.getElementById('pie');
+  Plotly.restyle(PIE, 'labels', [newData[0].otu_id.slice(0, 9)]);
+  Plotly.restyle(PIE, 'values', [newData[0].value.slice(0, 9)]);
+}
+
+function updateBubble(newData) {
+  var BUBBLE = document.getElementById('bubble');
+  Plotly.restyle(BUBBLE, 'x', [newData[0].otu_id]);
+  Plotly.restyle(BUBBLE, 'y', [newData[0].value]);
+  // im not sure if this is actually updating the size...
+  Plotly.restyle(BUBBLE, 'marker{size}', [newData[0].value]);
+
+}
+
+function updateMeta(path) {
+  var $AGE = document.getElementById("AGE");
+  var $BBTYPE = document.getElementById("BBTYPE");
+  var $ETHNICITY = document.getElementById("ETHNICITY");
+  var $GENDER = document.getElementById("GENDER");
+  var $LOCATION = document.getElementById("LOCATION");
+  var $SAMPLEID = document.getElementById("SAMPLEID");
+
+  Plotly.d3.json(`/metadata/${path}`, function(error, data) {
+    console.log("meta", data);
+    $AGE.innerHTML = data[0].AGE
+    $BBTYPE.innerHTML = data[0].BBTYPE
+    $ETHNICITY.innerHTML = data[0].ETHNICITY
+    $GENDER.innerHTML = data[0].GENDER
+    $LOCATION.innerHTML = data[0].LOCATION
+    $SAMPLEID.innerHTML = data[0].SAMPLEID
+  });
+}
+
 // handle change in option dropdown
 function optionChanged(option) {
-  // TODO: complete function
   console.log(option);
-
+  Plotly.d3.json(`/samples/${option}`, function(error, data) {
+    console.log("newdata", data);
+    updatePie(data);
+    updateBubble(data);
+    updateMeta(option);
+  });
 }
