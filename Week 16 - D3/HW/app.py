@@ -53,14 +53,14 @@ def metadata(sample):
     split = sample.split('_')
     results = session.query(META.AGE, META.BBTYPE, META.ETHNICITY, META.GENDER, META.LOCATION).filter(META.SAMPLEID == split[1]).all()
     meta = results[0]
-    formatted = {
+    formatted = [{
         "AGE": meta[0],
         "BBTYPE": meta[1],
         "ETHNICITY": meta[2],
         "GENDER": meta[3],
         "LOCATION": meta[4],
         "SAMPLEID": split[1]
-    }
+    }]
     return jsonify(formatted)
 
 @app.route('/wfreq/<sample>')
@@ -97,33 +97,6 @@ def sample(sample):
     }]
 
     return jsonify(formatted)
-
-
-    """OTU IDs and Sample Values for a given sample.
-
-    Sort your Pandas DataFrame (OTU ID and Sample Value)
-    in Descending Order by Sample Value
-
-    Return a list of dictionaries containing sorted lists  for `otu_ids`
-    and `sample_values`
-
-    [
-        {
-            otu_ids: [
-                1166,
-                2858,
-                481,
-                ...
-            ],
-            sample_values: [
-                163,
-                126,
-                113,
-                ...
-            ]
-        }
-    ]
-    """
 
 
 if __name__ == "__main__":
