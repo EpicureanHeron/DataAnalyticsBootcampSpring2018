@@ -50,12 +50,26 @@ d3.csv("data.csv", function (err, incomeData) {
   var circlesGroup = chartGroup.selectAll("circle")
   .data(incomeData)
   .enter()
-  .append("circle")
+  .append("g")
+
+  circlesGroup.append("circle")
   .attr("cx", d => xLinearScale(d.medianIncome))
   .attr("cy", d => yLinearScale(d.noDoctor))
   .attr("r", "15")
   .attr("fill", "blue")
   .attr("opacity", ".5")
+
+  circlesGroup.append("text")
+  .text(function (d) {
+    console.log(d.stateAbbr);
+    return d.stateAbbr;
+  })
+  .attr("x",function (d) {
+    return xLinearScale(d.medianIncome);
+  })
+  .attr("y", function (d) {
+    return yLinearScale(d.noDoctor);
+  })
 
   var toolTip = d3.tip()
     .attr("class", "tooltip")
