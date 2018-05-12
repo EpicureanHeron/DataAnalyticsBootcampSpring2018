@@ -1,0 +1,52 @@
+id,stateAbbr,state,medianIncome,noDoctor
+1,AL,Alabama,42830,17.4
+2,AK,Alaska,71583,11.9
+4,AZ,Arizona,50068,15.5
+5,AR,Arkansas,41262,18.2
+6,CA,California,61933,13.5
+8,CO,Colorado,61303,13.1
+9,CT,Connecticut,70048,11.3
+10,DE,Delaware,59716,10.8
+11,DC,District of Columbia,71648,10.5
+12,FL,Florida,47463,17.6
+13,GA,Georgia,49321,19
+15,HI,Hawaii,69592,8.7
+16,ID,Idaho,47861,15.8
+17,IL,Illinois,57444,12.4
+18,IN,Indiana,49446,15.1
+19,IA,Iowa,53712,8.8
+20,KS,Kansas,52504,12.5
+21,KY,Kentucky,42958,15.9
+22,LA,Louisiana,44555,17.5
+23,ME,Maine,49462,10.9
+24,MD,Maryland,73971,10.1
+25,MA,Massachusetts,69160,8.3
+26,MI,Michigan,49847,14.6
+27,MN,Minnesota,61481,9.2
+28,MS,Mississippi,39680,19.4
+29,MO,Missouri,48363,13.7
+30,MT,Montana,46328,11.9
+31,NE,Nebraska,52686,11.8
+32,NV,Nevada,51450,17.3
+33,NH,New Hampshire,66532,11.1
+34,NJ,New Jersey,71919,14
+35,NM,New Mexico,44803,17.2
+36,NY,New York,58878,14
+37,NC,North Carolina,46556,16.2
+38,ND,North Dakota,59029,7
+39,OH,Ohio,49308,13.1
+40,OK,Oklahoma,47529,15
+41,OR,Oregon,51075,14.4
+42,PA,Pennsylvania,53234,11.8
+44,RI,Rhode Island,54891,11.9
+45,SC,South Carolina,45238,18.1
+46,SD,South Dakota,50979,10
+47,TN,Tennessee,44361,15.5
+48,TX,Texas,53035,17.6
+49,UT,Utah,60922,14.3
+50,VT,Vermont,54166,9.1
+51,VA,Virginia,64902,13.1
+53,WA,Washington,61366,12.3
+54,WV,West Virginia,41059,16.5
+55,WI,Wisconsin,52622,10.6
+56,WY,Wyoming,57055,11.8
