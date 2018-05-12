@@ -1,6 +1,6 @@
 
-var svgWidth = 800;
-var svgHeight = 800;
+var svgWidth = 960;
+var svgHeight = 720;
 
 var margin = {
   top: 20,
@@ -34,7 +34,7 @@ d3.csv("data.csv", function (err, incomeData) {
     .range([0, width]);
 
   var yLinearScale = d3.scaleLinear()
-    .domain([0, 20])
+    .domain([5, 20])
     .range([height, 10]);
 
   var bottomAxis = d3.axisBottom(xLinearScale);
