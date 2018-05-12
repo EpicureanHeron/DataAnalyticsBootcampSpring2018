@@ -65,10 +65,10 @@ d3.csv("data.csv", function (err, incomeData) {
     return d.stateAbbr;
   })
   .attr("x",function (d) {
-    return xLinearScale(d.medianIncome);
+    return xLinearScale(d.medianIncome - 550);
   })
   .attr("y", function (d) {
-    return yLinearScale(d.noDoctor);
+    return yLinearScale(d.noDoctor - 0.1);
   })
 
   var toolTip = d3.tip()
