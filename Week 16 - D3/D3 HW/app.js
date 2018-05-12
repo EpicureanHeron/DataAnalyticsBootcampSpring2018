@@ -82,7 +82,7 @@ d3.csv("data.csv", function (err, incomeData) {
     .text("% That Don't Go To Doctor Because of $");
 
   chartGroup.append("text")
-    .attr("transform", `translate(${width * 0.}, ${height + margin.top + 30})`)
+    .attr("transform", `translate(${width * 0.4}, ${height + margin.top + 30})`)
     .attr("class", "axisText")
     .text("Median Income ($)");
 });
