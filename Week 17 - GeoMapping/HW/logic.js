@@ -42,8 +42,8 @@ d3.json(link, function(data) {
   legend.onAdd = function (myMap) {
 
       var div = L.DomUtil.create('div', 'info legend'),
-          colors = ['green', 'yellow', 'red'],
-          labels = ['< 1.5', '1.5 - 3.0', '> 3.0'];
+          colors = ['green', 'yellow', 'orange', 'red'],
+          labels = ['< 1.0', '1.0 - 2.0', '2.0 - 3.0','> 3.0'];
 
       div.innerHTML += "<h4 style = 'color: #fff'>Magnitude</h4>";
       // loop through our density intervals and generate a label with a colored square for each interval
@@ -63,12 +63,15 @@ d3.json(link, function(data) {
 
 function getColor(mag) {
   var color = '';
-  if (mag < 1.5) {
+  if (mag <= 1) {
     color = 'green';
-  } else if (mag > 1.5 && mag < 3) {
+  } else if (mag > 1 && mag <= 2) {
     color = 'yellow';
+  } else if (mag > 2 && mag <= 3) {
+    color = 'orange';
   } else if (mag > 3) {
-    color = 'red'
+    color = 'red';
   }
+
   return color;
 }
