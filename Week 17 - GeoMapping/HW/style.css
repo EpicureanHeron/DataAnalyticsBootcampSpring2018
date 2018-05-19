@@ -10,3 +10,10 @@ body,
 html {
   height: 100%;
 }
+
+.legend{
+  border: 1px solid #000;
+  align-items: center;
+  fill: #fff;
+  font-size: 30px;
+}
