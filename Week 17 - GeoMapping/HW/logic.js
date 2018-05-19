@@ -32,26 +32,24 @@ d3.json(link, function(data) {
     }).addTo(myMap);
     //
     //
-    //   L.circle(city.locatsion)
-    //     .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Population " + city.population + "</h3>")
-    //     .addTo(myMap);
-    // }
+    L.circle(latlng)
+      .bindPopup("<h1>Magnitude: " + magnitude + "</h1> <hr> <h3>Latitude: " + coords.latitude + "</h3><br><h3>Longitude: " + coords.longitude + "</h3>")
+      .addTo(myMap);
 
   }
+
+
 
 });
 
 function getColor(mag) {
   var color = '';
-  if (mag < 1.5){
+  if (mag < 1.5) {
     color = 'green';
-  }
-  else if (mag > 1.5 && mag < 3) {
+  } else if (mag > 1.5 && mag < 3) {
     color = 'yellow';
-  }
-  else if (mag > 3) {
+  } else if (mag > 3) {
     color = 'red'
   }
-  console.log(color);
   return color;
 }
