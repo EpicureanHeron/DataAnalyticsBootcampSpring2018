@@ -45,6 +45,7 @@ d3.json(link, function(data) {
           colors = ['green', 'yellow', 'red'],
           labels = ['< 1.5', '1.5 - 3.0', '> 3.0'];
 
+      div.innerHTML += "<h4 style = 'color: #fff'>Magnitude</h4>";
       // loop through our density intervals and generate a label with a colored square for each interval
       for (var i = 0; i < labels.length; i++) {
           div.innerHTML +=
